@@ -39,11 +39,17 @@ html, body{
   padding: 5em;
 }
 
+.quiz-question-innercontainer h1 {
+  font-weight: normal
+}
+
 .quiz-question-innercontainer h2 {
     font-size: 6vw;
     line-height: 1.1;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
+    position: relative;
+    margin: 0;
 }
 
 .quiz-choice-container {
@@ -58,12 +64,51 @@ html, body{
 .friends-list {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 500px;
 }
 .friends-list li {
   background: #fff;
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: 10px;
+  padding: 20px 10px;
   border-radius: 3px;
   box-shadow: 0px 10px 20px rgba(0,0,0,.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.friends-list li:hover {
+  transform: scale(1.2) !important;
+  box-shadow: 0px 20px 30px rgba(0,0,0,.7) !important;
+}
+
+.feedback-dialog {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  box-shadow: 0px 20px 30px rgba(0,0,0,.7);
+  margin-left: -200px;
+  margin-top: -200px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.feedback-dialog img {
+  max-width: 100%;
+}
+
+#FailMessage {
+  
+}
+
+#WinMessage.show, #FailMessage.show {
+  visibility: visible;
+  transition: all 0.2s ease;
+  transform: scale(2);
 }
